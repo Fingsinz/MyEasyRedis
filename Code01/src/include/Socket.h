@@ -84,4 +84,3 @@ public:
 	 */
 	int setNonBlocking() const;
 };
-};
