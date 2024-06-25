@@ -17,8 +17,8 @@ int main()
 	while (true)
 	{
 		std::getline(std::cin, msg);
-
 		write(client.getFd(), msg.c_str(), msg.size());
+
 		char buffer[1024] = { 0 };
 		int n = read(client.getFd(), buffer, 1024);
 		
@@ -27,8 +27,11 @@ int main()
 			break;
 		}
 
-		std::cout << buffer << std::endl;
-		memset(buffer, 0, 1024);
+		else
+		{
+			std::cout << buffer << std::endl;
+			memset(buffer, 0, 1024);
+		}
 	}
 
 	return 0;
